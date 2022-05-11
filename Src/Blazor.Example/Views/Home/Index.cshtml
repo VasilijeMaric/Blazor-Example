@@ -1,0 +1,45 @@
+﻿<h2>Home</h2>
+
+<div style="display: flex; flex-wrap: wrap;">
+    <div style="flex: 0.25">
+        <h3>Static</h3>
+
+        <component type="typeof(CounterWithParameter)" render-mode="Static" param-Count=25 />
+
+        @*<h3>WebAssembly</h3>
+
+        <component type="typeof(Counter)" render-mode="WebAssembly" />
+
+        <h3>WebAssemblyPrerendered</h3>
+
+        <component type="typeof(Counter)" render-mode="WebAssemblyPrerendered" />*@
+
+        <h3>Server</h3>
+
+        <component type="typeof(CounterWithParameter)" render-mode="Server" param-Count=50 />
+
+        <h3>ServerPrerendered</h3>
+
+        <component type="typeof(CounterWithParameter)" render-mode="ServerPrerendered" param-Count=100 />
+    </div>
+
+    <div style="flex: 0.25">
+        <h3>Counters (ServerPrerendered)</h3>
+
+        <component type="typeof(CounterDemo)" render-mode="ServerPrerendered" />
+    </div>
+
+    <div style="flex: 0.25">
+        <h3>Form (ServerPrerendered)</h3>
+
+        <component type="typeof(Form)" render-mode="ServerPrerendered" />
+        
+        <h3>Hello World (ServerPrerendered)</h3>
+
+        <component type="typeof(HelloWorld)" render-mode="ServerPrerendered" />
+        
+        <h3>JavaScript Interop (ServerPrerendered)</h3>
+
+        <component type="typeof(JavaScriptInterop)" render-mode="ServerPrerendered" />
+    </div>
+</div>

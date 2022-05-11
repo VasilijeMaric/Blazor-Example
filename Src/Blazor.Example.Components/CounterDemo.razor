@@ -1,0 +1,40 @@
+﻿<h4>Simple</h4>
+<Counter />
+
+<h4>One-way</h4>
+<CounterWithParameter Count="_count1"></CounterWithParameter>
+<CounterWithParameter Count="_count2"></CounterWithParameter>
+
+<h4>Two-way</h4>
+<CounterWithBinding @bind-Count="_count2"></CounterWithBinding>
+<CounterWithBinding @bind-Count="_count2"></CounterWithBinding>
+
+<h4>Complex</h4>
+<CounterComplex @bind-Count="_count2" TextColorClass="GetClass"></CounterComplex>
+
+@code{
+    int _count1 = 1337;
+    int _count2 = 1337;
+
+    string GetClass(int amount)
+    {
+        float percentage = amount / 9000f;
+
+        if (percentage >= 0 && percentage <= 1)
+        {
+            if (percentage < 0.33)
+            {
+                return "green";
+            }
+
+            if (percentage < 0.66)
+            {
+                return "yellow";
+            }
+
+            return "orange";
+        }
+
+        return "red";
+    }
+}

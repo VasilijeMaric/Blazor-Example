@@ -1,0 +1,35 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h2>Home</h2>
+
+<div style="display: flex; flex-wrap: wrap;">
+    <div style="flex: 0.25">
+        <h3>Static</h3>
+        
+        <CounterWithParameter Count="25" />
+        <CounterWithParameter Count="50" />
+        <CounterWithParameter Count="100" />
+    </div>
+
+    <div style="flex: 0.25">
+        <h3>Counters</h3>
+
+        <CounterDemo />
+    </div>
+
+    <div style="flex: 0.25">
+        <h3>Form</h3>
+
+        <Form />
+        
+        <h3>Hello World</h3>
+
+        <HelloWorld />
+        
+        <h3>JavaScript Interop</h3>
+
+        <JavaScriptInterop />
+    </div>
+</div>

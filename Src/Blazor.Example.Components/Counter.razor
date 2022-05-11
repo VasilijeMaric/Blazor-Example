@@ -1,0 +1,12 @@
+﻿<p>Current count: @_count</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int _count;
+
+    void IncrementCount()
+    {
+        _count++;
+    }
+}

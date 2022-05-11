@@ -1,0 +1,36 @@
+@inherits TestContext
+
+@code {
+    [Fact]
+    public void SimpleCounterStartsAtZero()
+    {
+        var cut = Render(@<Counter />);
+        cut.Find("p").MarkupMatches(@<p>Current count: 0</p>);
+    }
+
+    [Fact]
+    public void SimpleCounterIncrement()
+    {
+        var cut = Render(@<Counter />);
+        cut.Find("button").Click();
+        cut.Find("p").MarkupMatches(@<p>Current count: 1</p>);
+    }
+
+    [Fact]
+    public void CounterWithParameterStartsAtOneHundred()
+    {
+        var cut = Render(@<CounterWithParameter Count="100" />);
+        cut.Find("p").MarkupMatches(@<p>Current count: 100</p>);
+    }
+
+    [Fact]
+    public void CounterWithBindingTwoWay()
+    {
+        var count = 1337;
+        var counter = Render(@<CounterWithBinding @bind-Count="count" />);
+
+        counter.Find("button").Click();
+        
+        Assert.Equal(1338, count);
+    }
+}

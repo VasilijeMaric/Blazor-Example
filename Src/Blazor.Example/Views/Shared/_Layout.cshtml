@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blazor Example</title>
+    
+    <link href="_content/Blazor.Example.Components/Blazor.Example.Components.bundle.scp.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Blazor Example - Navigation</h1>
+    
+    <ul>
+        <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+        <li><a asp-action="Index" asp-controller="Test">Test</a></li>
+    </ul>
+
+    @RenderBody()
+    
+    <script src="~/_framework/blazor.server.js"></script>
+    
+    <script>
+        function showAlert(message) {
+            alert(message);
+        }
+
+        function javascript() {
+            DotNet.invokeMethodAsync("Blazor.Example.Components", "CallNET", "Hello from JavaScript!");
+        }
+    </script>
+</body>
+</html>

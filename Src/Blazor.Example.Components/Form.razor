@@ -1,0 +1,33 @@
+﻿@inherits FormComponent
+
+@if (string.IsNullOrEmpty(Result))
+{
+    <EditForm Model="FormModel" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div>
+            <label for="name">
+                Name:
+                <InputText id="name" @bind-Value="FormModel.Name" />
+            </label>
+        </div>
+
+        <div>
+            <label for="slug">
+                Comments:
+                <InputText id="comments" @bind-Value="FormModel.Comments"/>
+            </label>
+        </div>
+
+        <input type="submit" value="Submit"/>
+    </EditForm>
+}
+else
+{
+    <p>
+        Thank you for your submission!
+    </p>
+
+    <p>@Result</p>
+}

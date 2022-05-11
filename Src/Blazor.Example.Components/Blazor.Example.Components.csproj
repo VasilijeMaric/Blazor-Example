@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<Configurations>Debug;Release;Debug WebAssembly;Release WebAssembly</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug WebAssembly|AnyCPU'">
+	  <DefineConstants>$(DefineConstants)TRACE;WEBASSEMBLY</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release WebAssembly|AnyCPU'">
+	  <DefineConstants>$(DefineConstants)TRACE;WEBASSEMBLY</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="CounterComplex.razor.css" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="CounterComplex.razor.css" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="wwwroot\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.4" />
+	  <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Blazor.Example.Shared\Blazor.Example.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,19 @@
+﻿@inherits ComplexCounterComponent
+
+<p>Current count: <span class="@TextColorClass(Count)">@Count</span></p>
+
+@if (Count > 9000)
+{
+    <img src="/_content/Blazor.Example.Components/9000.gif" />
+}
+
+<div>
+    <button class="btn btn-primary" @onclick="() => IncrementCount(-1000)">-1000</button>
+    <button class="btn btn-primary" @onclick="() => IncrementCount(-100)">-100</button>
+    <button class="btn btn-primary" @onclick="() => IncrementCount(-10)">-10</button>
+    <button class="btn btn-primary" @onclick="() => IncrementCount(-1)">-1</button>
+    <button class="btn btn-primary" @onclick="() => IncrementCount(1)">+1</button>
+    <button class="btn btn-primary" @onclick="() => IncrementCount(10)">+10</button>
+    <button class="btn btn-primary" @onclick="() => IncrementCount(100)">+100</button>
+    <button class="btn btn-primary" @onclick="() => IncrementCount(1000)">+1000</button>
+</div>

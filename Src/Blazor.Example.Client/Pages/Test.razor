@@ -1,0 +1,48 @@
+﻿@page "/test"
+
+@inject StateContainer StateContainer
+@inject HttpClient HttpClient
+
+<PageTitle>Test</PageTitle>
+
+<h2>Test</h2>
+
+<h3>Local</h3>
+
+@if (StateContainer.ContactUs == null)
+{
+    <p>
+        This is a test with nothing special.
+    </p>
+}
+else
+{
+    <p>
+        @StateContainer.ContactUs.Name: @StateContainer.ContactUs.Comments
+    </p>
+}
+
+<h3>Server</h3>
+
+@if (_contactUsModel == null)
+{
+    <p>
+        This is a test with nothing special.
+    </p>
+}
+else
+{
+    <p>
+        @_contactUsModel.Name: @_contactUsModel.Comments
+    </p>
+}
+
+@code
+{
+    private ContactUsModel _contactUsModel;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _contactUsModel = await HttpClient.GetFromJsonAsync<ContactUsModel>("https://localhost:5443/Test/ContactUs");
+    }
+}

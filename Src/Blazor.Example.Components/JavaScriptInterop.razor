@@ -1,0 +1,20 @@
+﻿@inject IJSRuntime JS
+
+<div>
+    <button @onclick="CallJS">Call JavaScript from .NET</button>
+    <button onclick="javascript()">Call .NET from JavaScript</button>
+</div>
+
+@code
+{
+    [JSInvokable]
+    public static async Task CallNET(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+    private async Task CallJS()
+    {
+        await JS.InvokeVoidAsync("showAlert", "Hello from .NET!");
+    }
+}

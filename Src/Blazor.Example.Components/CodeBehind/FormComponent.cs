@@ -1,6 +1,9 @@
 ﻿using System.Net.Http.Json;
 using Blazor.Example.Shared.Models;
 using Blazor.Example.Shared.Services;
+#if WEBASSEMBLY
+using Blazor.Example.Shared.Services;
+#endif
 using Microsoft.AspNetCore.Components;
 
 namespace Blazor.Example.Components.CodeBehind
@@ -11,29 +14,28 @@ namespace Blazor.Example.Components.CodeBehind
 
         protected string Result { get; set; }
 
-#if WEBASSEMBLY
         [Inject]
         private HttpClient HttpClient { get; set; }
 
         [Inject]
         private StateContainer StateContainer { get; set; }
-#else
+
         [Inject]
         private IHttpClientFactory HttpClientFactory { get; set; }
-#endif
+
         protected async Task HandleValidSubmit()
         {
             Result = $"{FormModel.Name}: {FormModel.Comments}";
 
+            StateContainer.ContactUs = FormModel;
+
             try
             {
 #if WEBASSEMBLY
-            StateContainer.ContactUs = FormModel;
-
-            await HttpClient.PostAsJsonAsync("https://localhost:5443/Test/ContactUs", FormModel);
+                await HttpClient.PostAsJsonAsync("https://localhost:7443/Test/ContactUs", FormModel);
 #else
                 var client = HttpClientFactory.CreateClient();
-                await client.PostAsJsonAsync("https://localhost:5443/Test/ContactUs", FormModel);
+                await client.PostAsJsonAsync("https://localhost:7443/Test/ContactUs", FormModel);
 #endif
             }
             catch

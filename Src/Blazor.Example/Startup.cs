@@ -1,5 +1,4 @@
 using Blazor.Example.Shared;
-using Blazor.Example.Shared.Services;
 using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 using Microsoft.Extensions.FileProviders;
 

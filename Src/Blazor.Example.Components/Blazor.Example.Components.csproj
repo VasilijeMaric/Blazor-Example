@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
-		<Nullable>enable</Nullable>
+		<Nullable>disable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
 		<Configurations>Debug;Release;Debug WebAssembly;Release WebAssembly</Configurations>
@@ -34,8 +34,8 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
-	  <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.4" />
-	  <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.4" />
+	  <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.16" />
+	  <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.16" />
 	</ItemGroup>
 
 	<ItemGroup>

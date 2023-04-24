@@ -47,9 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Example.Components",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Example.Shared", "Src\Blazor.Example.Shared\Blazor.Example.Shared.csproj", "{F044A4FD-1A9A-4075-81FF-0D9F03D9672D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{7684A09C-4539-4D3C-B8C6-338698D027FC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{7684A09C-4539-4D3C-B8C6-338698D027FC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plain ASP.NET Server", "Plain ASP.NET Server", "{4824CF40-EE1D-4632-9AD2-0DF11A83B8AF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP.NET Server", "ASP.NET Server", "{4824CF40-EE1D-4632-9AD2-0DF11A83B8AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Standalone WebAssembly", "Standalone WebAssembly", "{55E0DEB3-2B8E-4ACB-B505-26FAD7AA83E3}"
 EndProject
@@ -57,11 +57,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{39F471
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Example.Client", "Src\Blazor.Example.Client\Blazor.Example.Client.csproj", "{CE14D079-D1A3-49CE-85E6-594FB3A440E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Example.Tests", "Src\Blazor.Example.Tests\Blazor.Example.Tests.csproj", "{2EB6205D-34AE-4991-B30C-19B9EE26FE5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Example.Tests", "Src\Blazor.Example.Tests\Blazor.Example.Tests.csproj", "{2EB6205D-34AE-4991-B30C-19B9EE26FE5D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hybrid WPF", "Hybrid WPF", "{DD2069F1-4C17-4CE1-BBB3-7A8D1C8E1414}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Example.WPF", "Src\Blazor.Example.WPF\Blazor.Example.WPF.csproj", "{9119F867-F036-41DC-A751-DF6F84E3A4E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{C577384D-640B-48EC-BEE6-02AC02AA209B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

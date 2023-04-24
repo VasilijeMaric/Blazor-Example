@@ -1,7 +1,7 @@
 ﻿@page "/test"
 
 @inject StateContainer StateContainer
-@inject HttpClient HttpClient;
+@inject HttpClient HttpClient
 
 <PageTitle>Test</PageTitle>
 
@@ -45,7 +45,7 @@ else
     {
         try
         {
-            _contactUsModel = await HttpClient.GetFromJsonAsync<ContactUsModel>("https://localhost:5443/Test/ContactUs");
+            _contactUsModel = await HttpClient.GetFromJsonAsync<ContactUsModel>("https://localhost:7443/Test/ContactUs");
         }
         catch
         {

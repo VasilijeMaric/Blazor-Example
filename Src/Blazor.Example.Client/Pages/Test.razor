@@ -3,7 +3,7 @@
 @inject StateContainer StateContainer
 @inject HttpClient HttpClient
 
-<PageTitle>Test</PageTitle>
+<PageTitle>Standalone WebAssembly - Test</PageTitle>
 
 <h2>Test</h2>
 
@@ -43,6 +43,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        _contactUsModel = await HttpClient.GetFromJsonAsync<ContactUsModel>("https://localhost:5443/Test/ContactUs");
+        _contactUsModel = await HttpClient.GetFromJsonAsync<ContactUsModel>("https://localhost:7443/Test/ContactUs");
     }
 }

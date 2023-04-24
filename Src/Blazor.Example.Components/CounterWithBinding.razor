@@ -9,7 +9,7 @@
     [Parameter]
     public EventCallback<int> CountChanged { get; set; }
 
-    async Task IncrementCount()
+    private async Task IncrementCount()
     {
         Count++;
 

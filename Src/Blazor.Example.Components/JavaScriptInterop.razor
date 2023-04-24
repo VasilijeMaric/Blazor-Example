@@ -7,8 +7,14 @@
 
 @code
 {
-    [JSInvokable]
+    /*[JSInvokable]
     public static async Task CallNET(string message)
+    {
+        Console.WriteLine(message);
+    }*/
+
+    [JSInvokable]
+    public static void CallNET(string message)
     {
         Console.WriteLine(message);
     }

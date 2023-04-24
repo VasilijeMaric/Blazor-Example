@@ -13,10 +13,10 @@
 <CounterComplex @bind-Count="_count2" TextColorClass="GetClass"></CounterComplex>
 
 @code{
-    int _count1 = 1337;
-    int _count2 = 1337;
+    private int _count1 = 1337;
+    private int _count2 = 1337;
 
-    string GetClass(int amount)
+    private string GetClass(int amount)
     {
         float percentage = amount / 9000f;
 
